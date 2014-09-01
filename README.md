@@ -1,0 +1,4 @@
+Tamarind
+========
+
+Basic javascript carousel
