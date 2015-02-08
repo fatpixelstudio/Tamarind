@@ -1,1 +1,44 @@
 /* Tamarind styles */
+
+* {
+	box-sizing: border-box;
+}
+
+.Carousel {
+	position: relative;
+	width: 100%;
+	height: 400px;
+	background-color: #ccc;
+}
+
+.Carousel-item {
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	transition: opacity 1s ease-in-out;
+	background: #efefef;
+}
+
+.Carousel-item.inactive {
+	opacity: 0;
+}
+
+.no-opacity .Carousel-item.inactive {
+	visibility: hidden;
+}
+
+.Carousel-item.active {
+	opacity: 1;
+}
+
+.no-opacity .Carousel-item.active {
+	visibility: visible;
+}
+
+.Carousel-image {
+	width: 100%;
+}
