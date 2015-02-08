@@ -11,7 +11,7 @@ window.smoothScroll = (function (window, document, undefined) {
 		console.log('your browser meets the requirements');
 	}
 	else {
-		console.loh('your browser is kind of old. Lets serve an alternate version');
+		console.log('your browser is kind of old. Lets serve an alternate version');
 	}
 
 
