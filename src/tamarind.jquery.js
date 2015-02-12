@@ -1,4 +1,4 @@
- function tamarindclass() {
+function tamarindclass() {
 
 	'use strict';
 
