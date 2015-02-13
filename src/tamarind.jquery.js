@@ -9,18 +9,18 @@ function tamarindclass() {
 	}
 
 	this.el = {
-		arrows : '<ul class="CarouselArrowNav"><li class="CarouselArrowNav-item"><a href="#" class="CarouselArrowNav-button CarouselArrowNav-button--prev" data-dir="prev">Previous</a></li><li class="CarouselArrowNav-item"><a href="#" class="CarouselArrowNav-button CarouselArrowNav-button--next" data-dir="next">Next</a></li></ul>'
+		arrows : '<ul class="TamarindArrowNav"><li class="TamarindArrowNav-item"><a href="#" class="TamarindArrowNav-button TamarindArrowNav-button--prev" data-dir="prev">Previous</a></li><li class="TamarindArrowNav-item"><a href="#" class="TamarindArrowNav-button TamarindArrowNav-button--next" data-dir="next">Next</a></li></ul>'
 	}
 
 	this.init = function(el, opts) {
-		if($('.Carousel').length > 0 ) {
+		if(el.length > 0 ) {
 
-			$('.Carousel > .Carousel-item').addClass('inactive');
-			$('.Carousel > .Carousel-item:first-child').removeClass('inactive').addClass('active');
+			el.children('.Tamarind-item').addClass('inactive');
+			el.children('.Tamarind-item:first-child').removeClass('inactive').addClass('active');
 
 			if(opts.nav === true) {
-				$('.CarouselWrap').append(self.el.arrows);
-				$('.CarouselArrowNav-button').on('click', self.handleClick);
+				el.parent('.TamarindWrap').append(self.el.arrows);
+				$('.TamarindArrowNav-button').on('click', self.handleClick);
 			}
 
 			if(opts.autoplay === true) {
@@ -37,19 +37,19 @@ function tamarindclass() {
 	}
 
 	this.move = function(dir) {
-		var current = $('.Carousel > .Carousel-item.active');
+		var current = $('.Tamarind > .Tamarind-item.active');
 		var target;
 
 		if(dir === 'next') {
 			target = current.next();
 			if(target.length === 0) {
-				target = $('.Carousel > .Carousel-item:first-child');
+				target = $('.Tamarind > .Tamarind-item:first-child');
 			}
 		}
 		else {
 			target = current.prev();
 			if(target.length === 0) {
-				target = $('.Carousel > .Carousel-item:last-child');
+				target = $('.Tamarind > .Tamarind-item:last-child');
 			}
 		}
 
